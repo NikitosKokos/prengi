@@ -1,0 +1,36 @@
+@import "./base/variables";
+@import "./base/fonts";
+@import "./base/zeroing";
+@import "./base/mixins";
+@import "./base/ibg";
+@import "./base/burger";
+@import "./libs/swiper-bundle.min";
+
+@import "./blocks/header";
+@import "./blocks/footer";
+@import "./blocks/main-screen";
+@import "./blocks/btn";
+
+._container {
+  max-width: $width + 30px;
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+.wrapper {
+  width: 100%;
+  // height: 100%;
+  overflow: hidden;
+  // display: flex;
+  // flex-direction: column;
+}
+
+body._hidden {
+  overflow: hidden;
+}
+
+.page {
+  flex: 1 1 auto;
+  // overflow: hidden;
+}
+
+@import "./base/media";

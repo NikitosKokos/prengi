@@ -1,0 +1,18 @@
+.btn {
+  color: $white;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 20px 45px;
+  background: $blue;
+  border-radius: 3px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.07);
+  transition: all ease 0.3s;
+  display: inline-block;
+  @media (min-width: 992px) {
+    &:hover {
+      background: $white;
+      color: $blue;
+    }
+  }
+}

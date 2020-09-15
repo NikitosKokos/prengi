@@ -1,0 +1,208 @@
+.main-screen {
+  width: 100%;
+  min-height: 700px;
+  position: relative;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    min-height: 700px;
+  }
+  .swiper-wrapper {
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+  }
+  &__nav-slide {
+    position: absolute;
+    left: 50%;
+    bottom: 68px;
+    transform: translateX(-50%);
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    z-index: 9;
+  }
+  &__pagination {
+    margin: 0 10px;
+    .swiper-pagination-bullet {
+      margin: 0 2px;
+      width: 11px;
+      height: 11px;
+      display: inline-block;
+      border: 1px solid $white;
+      background: transparent;
+      cursor: pointer;
+    }
+    .swiper-pagination-bullet-active {
+      background: $white;
+    }
+  }
+  &__prev {
+    width: 6px;
+    height: 11px;
+    background: url("../../img/icons/prew.svg") 0 0 no-repeat;
+    cursor: pointer;
+  }
+  &__next {
+    width: 6px;
+    height: 11px;
+    background: url("../../img/icons/next.svg") 0 0 no-repeat;
+    cursor: pointer;
+  }
+
+  &__slideBg {
+    position: absolute;
+    width: 434px;
+    height: 569px;
+    bottom: 0;
+    right: 0;
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    &:after {
+      content: "";
+      background: linear-gradient(to right top, #fe8687 30%, #00c2f0 100%);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.1;
+      z-index: -1;
+    }
+    &:before {
+      content: "";
+      background-color: #333333;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.4;
+      z-index: -1;
+    }
+  }
+  &__slider {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    // height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  &__slide {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    min-height: 700px;
+  }
+  //   &__body {
+  //     flex: 1 1 auto;
+  //     display: flex;
+  //     align-items: center;
+  //     width: 100%;
+  //     position: relative;
+  //     overflow: hidden;
+  //   }
+
+  &__info {
+    max-width: 50%;
+    @media (max-width: 992px) {
+      max-width: none;
+    }
+  }
+
+  &__title {
+    color: $white;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: clac(48/42);
+    margin: 0px 0px 27px 0px;
+    @media (max-width: 767px) {
+      font-size: 30px;
+      line-height: clac(48/30);
+    }
+  }
+
+  &__subtitle {
+    color: $white;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: calc(30 / 24);
+    margin: 0px 0px 40px 0px;
+    @media (max-width: 767px) {
+      font-size: 18px;
+      line-height: clac(30/18);
+    }
+  }
+}
+
+.subheader-main-screen {
+  padding: 40px 0px 0px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo {
+  }
+
+  &__menu {
+    ul {
+      display: flex;
+      transition: all ease 0.3s;
+      @media (max-width: 767px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        text-align: center;
+        background: $blue;
+        z-index: 9;
+        overflow: auto;
+        padding: 160px 0 30px 0;
+        transform: translateX(100%);
+        &._active {
+          transform: translateX(0);
+        }
+        li {
+          display: block;
+          margin: 0px 0px 30px 0px;
+          &:last-child {
+            margin: 0px 0px 0px 0px;
+          }
+          a {
+            font-size: 20px;
+          }
+        }
+      }
+      li {
+        margin: 0px 45px 0px 0px;
+        a {
+          color: $white;
+          font-size: 13px;
+          font-weight: 700;
+          text-transform: uppercase;
+          transition: all ease 0.3s;
+          @media (min-width: 992px) {
+            &:hover {
+              color: $blue;
+            }
+          }
+        }
+        &:last-child {
+          margin: 0px 0px 0px 0px;
+        }
+      }
+    }
+  }
+}

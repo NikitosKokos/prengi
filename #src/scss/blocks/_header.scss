@@ -1,0 +1,52 @@
+.header {
+  background: $white;
+  padding: 20px 0px;
+  z-index: 10;
+  position: relative;
+  &__content {
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    flex: 1 1 20%;
+    @media (max-width: 480px) {
+      flex: 0 0 100%;
+    }
+    @media (max-width: 767px) {
+      flex: 0 0 50%;
+    }
+    @media (max-width: 992px) {
+      flex: 0 0 33.333%;
+    }
+    @media (max-width: 1200px) {
+      flex: 0 0 25%;
+    }
+  }
+
+  &__text {
+  }
+  &__img {
+    margin: 0px 10px 0px 0px;
+  }
+
+  &__country {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: calc(18 / 14);
+  }
+
+  &__descr {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: calc(18 / 12);
+  }
+  //   .slider-container {
+  //     overflow: hidden;
+  //     width: 100%;
+  //   }
+  .swiper-wrapper {
+    display: flex;
+  }
+}

@@ -1,0 +1,34 @@
+//$n - количество строк текста
+//$lh - высота линии
+@mixin truncate($n, $lh: null) {
+  @if $n==1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  } @else {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-line-clamp: $n;
+    -moz-line-clamp: $n;
+    line-clamp: $n;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    overflow: hidden;
+    line-height: $lh;
+    height: $lh * $n;
+  }
+}
+
+// fonts
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"),
+      url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
