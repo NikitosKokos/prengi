@@ -908,7 +908,7 @@ button.swiper-pagination-bullet {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  z-index: 9;
+  z-index: 5;
 }
 
 .main-screen__pagination {
@@ -932,14 +932,14 @@ button.swiper-pagination-bullet {
 .main-screen__prev {
   width: 6px;
   height: 11px;
-  background: url("../../img/icons/prew.svg") 0 0 no-repeat;
+  background: url("../img/icons/prew.svg") 0 0 no-repeat;
   cursor: pointer;
 }
 
 .main-screen__next {
   width: 6px;
   height: 11px;
-  background: url("../../img/icons/next.svg") 0 0 no-repeat;
+  background: url("../img/icons/next.svg") 0 0 no-repeat;
   cursor: pointer;
 }
 
@@ -1124,11 +1124,11 @@ button.swiper-pagination-bullet {
           flex-direction: column;
   margin: 0 15px;
   padding: 0px 20px 35px 20px;
-  background: url("../../img/cards/bg-card.png") bottom right no-repeat;
+  background: url("../img/cards/bg-card.png") bottom right no-repeat;
 }
 
 .card__item_g {
-  background: url("../../img/cards/bg-card2.png") bottom right no-repeat;
+  background: url("../img/cards/bg-card2.png") bottom right no-repeat;
 }
 
 .card__item_g .card__descr {
@@ -1382,6 +1382,12 @@ body._hidden {
   }
 }
 
-.webp .card__item{ background: url(../../img/cards/bg-card.webp) bottom right no-repeat; }
+@media (max-height: 400px) {
+  .main-screen__info {
+    margin: 20px 0px 85px 0px;
+  }
+}
 
-.webp .card__item_g{ background: url(../../img/cards/bg-card2.webp) bottom right no-repeat; }
+.webp .card__item{ background: url(../img/cards/bg-card.webp) bottom right no-repeat; }
+
+.webp .card__item_g{ background: url(../img/cards/bg-card2.webp) bottom right no-repeat; }
