@@ -1,0 +1,132 @@
+.tabs {
+  position: relative;
+  &__content {
+    overflow: hidden;
+  }
+
+  &__tabs {
+    margin: 30px 0px 40px 0px;
+    display: flex;
+    justify-content: center;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 3px 0;
+      border: 1px solid $white;
+      border-radius: 6px;
+      li {
+        padding: 18px 30px;
+        cursor: pointer;
+        color: $white;
+        font-size: 14px;
+        font-weight: 400;
+        border-right: 1px solid $white;
+        transition: all ease 0.3s;
+        text-align: center;
+        &:last-child {
+          border-right: none;
+        }
+        @media (max-width: 992px) {
+          flex: 0 0 25%;
+          padding: 15px 30px;
+        }
+        @media (max-width: 767px) {
+          flex: 0 0 33.333%;
+          padding: 10px 30px;
+        }
+        @media (max-width: 600px) {
+          flex: 0 0 50%;
+        }
+        @media (max-width: 400px) {
+          flex: 1 1 100%;
+          border-right: none;
+        }
+        @media (min-width: 992px) {
+          &:hover {
+            color: $blue;
+          }
+        }
+        &.active {
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+    display: none;
+    &_active {
+      display: block;
+    }
+  }
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__prev {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background: url("../img/tabs/prev.png") 0 0 no-repeat;
+    width: 18px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 2;
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  &__next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: url("../img/tabs/next.png") 0 0 no-repeat;
+    width: 18px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 2;
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    &:after {
+      content: "";
+      background: linear-gradient(to right top, #fe8687 30%, #00c2f0 100%);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.1;
+      z-index: -1;
+    }
+    &:before {
+      content: "";
+      background-color: #333333;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.4;
+      z-index: -1;
+    }
+  }
+}
