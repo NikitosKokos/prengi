@@ -1,0 +1,122 @@
+.data {
+  position: relative;
+  &__body {
+    display: flex;
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+  .title {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__item {
+    flex: 0 0 50%;
+    position: relative;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    @media (min-width: 767px) {
+      &:first-child {
+        justify-content: flex-end;
+        .data__text {
+          margin: 0px 48px 0px 0px;
+          text-align: right;
+          &:before {
+            left: auto;
+            right: 0;
+          }
+        }
+        .data__title {
+          padding: 38px 35px 0px 0px;
+        }
+        .data__descr {
+          padding: 0px 35px 0px 0px;
+        }
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    margin: 0px 0px 0px 48px;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 167px;
+      height: 167px;
+      background-color: #00c2f0;
+      opacity: 0.3;
+    }
+  }
+
+  &__title {
+    color: $white;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 22 / 30;
+    text-transform: uppercase;
+    padding: 38px 0px 0px 35px;
+    margin: 0px 0px 20px 0px;
+    z-index: 2;
+    position: relative;
+    @media (max-width: 992px) {
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 22 / 26;
+    }
+  }
+
+  &__descr {
+    color: $white;
+    font-size: 18px;
+    padding: 0px 0px 0px 35px;
+    font-weight: 300;
+    line-height: 26 / 18;
+    max-width: 500px;
+    z-index: 2;
+    position: relative;
+    @media (max-width: 992px) {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22 / 16;
+      max-width: none;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    &:after {
+      content: "";
+      background: linear-gradient(to right top, #fe8687 30%, #00c2f0 100%);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.1;
+      z-index: -1;
+    }
+    &:before {
+      content: "";
+      background-color: #333333;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.4;
+      z-index: -1;
+    }
+  }
+}

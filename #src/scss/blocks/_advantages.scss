@@ -1,0 +1,69 @@
+.advantages {
+  &__content {
+  }
+
+  &__body {
+    padding: 45px 0px 80px 0px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex: 0 0 50%;
+    position: relative;
+    overflow: hidden;
+    @media (max-width: 767px) {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    position: relative;
+    img {
+      width: 100%;
+    }
+    &:after {
+      content: "";
+      background: linear-gradient(to right top, #fe8687 30%, #00c2f0 100%);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.1;
+      //   z-index: -1;
+    }
+    &:before {
+      content: "";
+      background-color: #333333;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.4;
+      //   z-index: -1;
+    }
+  }
+
+  &__descr {
+    position: absolute;
+    padding: 40px 20px;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    background: rgba($white, $alpha: 0.5);
+    color: #111;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 26 / 23;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all ease 0.3s;
+    @media (max-width: 600px) {
+      font-size: 18px;
+    }
+  }
+}
